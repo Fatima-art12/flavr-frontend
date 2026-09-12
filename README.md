@@ -1,16 +1,31 @@
-# React + Vite
+# Flavr
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack recipe discovery web app built with React, Node.js/Express, and MySQL.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- 🔍 Browse and search recipes by ingredient, cuisine, or title
+- 👤 User authentication (signup/login) with persistent sessions
+- ❤️ Save favorite recipes
+- 📅 Weekly meal planner with multiple meals per day
+- 🌙 Dark mode
+- 🖼️ Profile picture upload with image cropping
+- 🛠️ Admin dashboard — add, edit, and delete recipes (with image upload + crop)
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Frontend:** React, React Router, Vite, react-easy-crop
+**Backend:** Node.js, Express, MySQL, JWT authentication, bcrypt, Multer
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+The app runs on `http://localhost:5173` by default. Requires the [backend server](https://github.com/Fatima-art12/flavr-backend) running alongside it.
+
+## Related
+
+Backend repo: [flavr-backend](https://github.com/Fatima-art12/flavr-backend)
