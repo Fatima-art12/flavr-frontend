@@ -1,0 +1,33 @@
+.cuisine-section {
+  margin: 24px 40px;
+}
+
+.cuisine-section h2 {
+  font-size: 20px;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.cuisine-filter {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 10px 22px;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.pill-active {
+  background-color: #F3E8FD;
+  border: 1px solid var(--accent-purple);
+  color: var(--accent-purple);
+}

@@ -1,0 +1,40 @@
+.recipes-page {
+  padding: 24px 40px;
+}
+
+.recipes-page h1 {
+  font-size: 26px;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.recipes-search {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 18px;
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-size: 14px;
+  outline: none;
+  margin-bottom: 24px;
+  display: block;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.recipes-search:focus {
+  border: 1px solid var(--accent-purple);
+}
+
+.recipes-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.no-results {
+  color: var(--text-secondary);
+  font-size: 15px;
+  margin-top: 20px;
+}
