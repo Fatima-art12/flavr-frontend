@@ -16,7 +16,7 @@ export function AuthProvider({ children }) {
   }, [])
 
   const signup = async (name, email, password) => {
-    const response = await fetch('http://localhost:5000/api/signup', {
+    const response = await fetch('http://https://flavr-backend-production.up.railway.app/api/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email, password })
@@ -31,7 +31,7 @@ export function AuthProvider({ children }) {
   }
 
   const login = async (email, password) => {
-    const response = await fetch('http://localhost:5000/api/login', {
+    const response = await fetch('http://https://flavr-backend-production.up.railway.app/api/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password })
@@ -62,7 +62,7 @@ export function AuthProvider({ children }) {
     formData.append('profilePicture', file)
     formData.append('userId', user.id)
 
-    const response = await fetch('http://localhost:5000/api/upload-profile-picture', {
+    const response = await fetch('http://https://flavr-backend-production.up.railway.app/api/upload-profile-picture', {
       method: 'POST',
       body: formData
     })

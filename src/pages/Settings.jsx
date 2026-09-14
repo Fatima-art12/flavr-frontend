@@ -56,7 +56,7 @@ function Settings() {
           >
             {user && user.profile_picture ? (
               <img
-                src={`http://localhost:5000/uploads/${user.profile_picture}`}
+                src={`http://https://flavr-backend-production.up.railway.app/uploads/${user.profile_picture}`}
                 alt="Profile"
                 className="profile-avatar-img"
               />
@@ -117,7 +117,7 @@ function Settings() {
       {showPreview && (
         <div className="image-preview-overlay" onClick={() => setShowPreview(false)}>
           <img
-            src={`http://localhost:5000/uploads/${user.profile_picture}`}
+            src={`http://https://flavr-backend-production.up.railway.app/uploads/${user.profile_picture}`}
             alt="Profile preview"
             className="image-preview-large"
           />

@@ -72,7 +72,7 @@ function Admin() {
       const uploadData = new FormData()
       uploadData.append('recipeImage', croppedFile)
 
-      const response = await fetch('http://localhost:5000/api/upload-recipe-image', {
+      const response = await fetch('http://https://flavr-backend-production.up.railway.app/api/upload-recipe-image', {
         method: 'POST',
         body: uploadData
       })
@@ -101,14 +101,14 @@ function Admin() {
 
     try {
       if (editingId) {
-        const response = await fetch(`http://localhost:5000/api/recipes/${editingId}`, {
+        const response = await fetch(`http://https://flavr-backend-production.up.railway.app/api/recipes/${editingId}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData)
         })
         if (!response.ok) throw new Error('Failed to update recipe')
       } else {
-        const response = await fetch('http://localhost:5000/api/recipes', {
+        const response = await fetch('http://https://flavr-backend-production.up.railway.app/api/recipes', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData)
@@ -151,7 +151,7 @@ function Admin() {
 
   const confirmDeleteNow = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/recipes/${confirmDeleteId}`, {
+      const response = await fetch(`http://https://flavr-backend-production.up.railway.app/api/recipes/${confirmDeleteId}`, {
         method: 'DELETE'
       })
       if (!response.ok) throw new Error('Failed to delete recipe')
