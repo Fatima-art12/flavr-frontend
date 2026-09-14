@@ -37,7 +37,7 @@ function Navbar() {
       <div className="navbar-profile" onClick={handleProfileClick}>
         {user && user.profile_picture ? (
           <img
-            src={`http://https://flavr-backend-production.up.railway.app/uploads/${user.profile_picture}`}
+            src={`https://flavr-backend-production.up.railway.app/uploads/${user.profile_picture}`}
             alt="Profile"
             className="navbar-profile-img"
           />

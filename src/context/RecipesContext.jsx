@@ -9,12 +9,12 @@ export function RecipesProvider({ children }) {
 
   const fetchRecipes = () => {
     setLoading(true)
-    return fetch('http://localhost:5000/api/recipes')
+    return fetch('https://flavr-backend-production.up.railway.app/api/recipes')
       .then((res) => res.json())
       .then((data) => {
         const recipesWithImages = data.map((recipe) => ({
           ...recipe,
-          image: imageMap[recipe.image] || `http://localhost:5000/uploads/${recipe.image}`,
+          image: imageMap[recipe.image] || `https://flavr-backend-production.up.railway.app/uploads/${recipe.image}`,
           time: `${recipe.time_minutes} min`,
           ingredients: recipe.ingredients.split(', '),
           steps: recipe.steps.split('. ').filter((s) => s.trim() !== ''),
