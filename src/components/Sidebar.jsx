@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { useAuth } from '../context/AuthContext'
 import './Sidebar.css'
 
 const menuItems = [
@@ -14,6 +15,7 @@ const menuItems = [
 function Sidebar() {
   const location = useLocation()
   const [isOpen, setIsOpen] = useState(false)
+  const { user } = useAuth()
 
   const closeMenu = () => setIsOpen(false)
 
@@ -48,6 +50,15 @@ function Sidebar() {
           >
             <span className="menu-icon">⚙️</span>Settings
           </Link>
+          {user && user.is_admin ? (
+            <Link
+              to="/admin"
+              onClick={closeMenu}
+              className={location.pathname === '/admin' ? 'menu-item menu-item-active' : 'menu-item'}
+            >
+              <span className="menu-icon">🛠️</span>Admin
+            </Link>
+          ) : null}
         </div>
       </div>
     </>
