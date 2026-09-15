@@ -1,11 +1,8 @@
-import { useState } from 'react'
 import './CuisineFilter.css'
 
 const cuisines = ['All', 'Italian', 'Desi', 'Chinese', 'Mexican', 'Breakfast', 'Desserts', 'Healthy']
 
-function CuisineFilter() {
-  const [selected, setSelected] = useState('All')
-
+function CuisineFilter({ selected, onSelect }) {
   return (
     <div className="cuisine-section">
       <h2>Explore by Cuisine</h2>
@@ -14,7 +11,7 @@ function CuisineFilter() {
           <button
             key={index}
             className={selected === cuisine ? 'pill pill-active' : 'pill'}
-            onClick={() => setSelected(cuisine)}
+            onClick={() => onSelect(cuisine)}
           >
             {cuisine}
           </button>
