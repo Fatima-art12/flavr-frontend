@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import './Sidebar.css'
 
@@ -12,31 +13,44 @@ const menuItems = [
 
 function Sidebar() {
   const location = useLocation()
+  const [isOpen, setIsOpen] = useState(false)
+
+  const closeMenu = () => setIsOpen(false)
 
   return (
-    <div className="sidebar">
-      <div className="sidebar-brand">
-        <h1 className="sidebar-logo">Flavr</h1>
-        <p className="sidebar-tagline">Cook with flavr.</p>
-      </div>
-      <div className="sidebar-menu">
-        {menuItems.map((item, index) => (
+    <>
+      <button className="hamburger-btn" onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? '✕' : '☰'}
+      </button>
+
+      {isOpen && <div className="sidebar-overlay" onClick={closeMenu}></div>}
+
+      <div className={isOpen ? 'sidebar sidebar-open' : 'sidebar'}>
+        <div className="sidebar-brand">
+          <h1 className="sidebar-logo">Flavr</h1>
+          <p className="sidebar-tagline">Cook with flavr.</p>
+        </div>
+        <div className="sidebar-menu">
+          {menuItems.map((item, index) => (
+            <Link
+              key={index}
+              to={item.path}
+              onClick={closeMenu}
+              className={location.pathname === item.path ? 'menu-item menu-item-active' : 'menu-item'}
+            >
+              <span className="menu-icon">{item.icon}</span>{item.name}
+            </Link>
+          ))}
           <Link
-            key={index}
-            to={item.path}
-            className={location.pathname === item.path ? 'menu-item menu-item-active' : 'menu-item'}
+            to="/settings"
+            onClick={closeMenu}
+            className={location.pathname === '/settings' ? 'menu-item menu-item-active' : 'menu-item'}
           >
-            <span className="menu-icon">{item.icon}</span>{item.name}
+            <span className="menu-icon">⚙️</span>Settings
           </Link>
-        ))}
-        <Link
-          to="/settings"
-          className={location.pathname === '/settings' ? 'menu-item menu-item-active' : 'menu-item'}
-        >
-          <span className="menu-icon">⚙️</span>Settings
-        </Link>
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 
